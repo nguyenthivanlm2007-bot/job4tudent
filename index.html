@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job4Student - Việc làm cho sinh viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <span>Job</span>4Student
+        </div>
+
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#jobs">Tìm việc</a>
+            <a href="#about">Giới thiệu</a>
+            <a href="#contact">Liên hệ</a>
+            <button class="login-btn" onclick="openLogin()">Đăng nhập</button>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ✨ Cơ hội việc làm dành riêng cho sinh viên
+        </div>
+
+        <h1>
+            Tìm công việc phù hợp<br>
+            <span>với bạn</span>
+        </h1>
+
+        <p>
+            Khám phá hàng loạt việc làm thêm, thực tập và công việc online
+            phù hợp với thời gian học tập của bạn.
+        </p>
+
+        <div class="search-box">
+
+            <div class="search-input">
+                🔎
+                <input id="searchInput"
+                       type="text"
+                       placeholder="Tìm công việc, vị trí...">
+            </div>
+
+            <div class="search-input">
+                📍
+                <input id="locationInput"
+                       type="text"
+                       placeholder="Địa điểm">
+            </div>
+
+            <button onclick="searchJobs()">
+                Tìm kiếm
+            </button>
+
+        </div>
+
+        <div class="popular">
+            <span>Từ khóa phổ biến:</span>
+            <a href="#jobs">Phục vụ</a>
+            <a href="#jobs">Marketing</a>
+            <a href="#jobs">IT</a>
+            <a href="#jobs">Gia sư</a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- JOBS -->
+<section class="jobs-section" id="jobs">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">CƠ HỘI DÀNH CHO BẠN</span>
+            <h2>Việc làm nổi bật</h2>
+            <p class="job-description">
+                Khám phá các công việc phù hợp với sinh viên.
+            </p>
+        </div>
+
+        <a href="#jobs" class="view-all">
+            Xem tất cả →
+        </a>
+    </div>
+
+
+    <div class="filters">
+
+        <button class="active"
+                onclick="filterJobs('all')">
+            Tất cả
+        </button>
+
+        <button onclick="filterJobs('parttime')">
+            ⏰ Bán thời gian
+        </button>
+
+        <button onclick="filterJobs('intern')">
+            🎓 Thực tập
+        </button>
+
+        <button onclick="filterJobs('online')">
+            💻 Online
+        </button>
+
+    </div>
+
+
+    <div class="job-list" id="jobList"></div>
+
+</section>
+
+
+<!-- GIỚI THIỆU -->
+<section class="about-section" id="about">
+
+    <div class="about-title">
+        <span class="section-label">VỀ JOB4STUDENT</span>
+        <h2>Tại sao chọn Job4Student?</h2>
+        <p>
+            Chúng tôi giúp sinh viên tìm được công việc phù hợp
+            mà không ảnh hưởng đến việc học tập.
+        </p>
+    </div>
+
+
+    <div class="about-cards">
+
+        <div class="about-card">
+            <div class="about-icon">🎓</div>
+
+            <h3>Dành cho sinh viên</h3>
+
+            <p>
+                Các công việc được lựa chọn phù hợp với sinh viên,
+                không yêu cầu quá nhiều kinh nghiệm.
+            </p>
+        </div>
+
+
+        <div class="about-card">
+            <div class="about-icon">💼</div>
+
+            <h3>Nhiều lựa chọn</h3>
+
+            <p>
+                Việc làm bán thời gian, thực tập và việc làm online
+                với nhiều lĩnh vực khác nhau.
+            </p>
+        </div>
+
+
+        <div class="about-card">
+            <div class="about-icon">🔎</div>
+
+            <h3>Tìm kiếm dễ dàng</h3>
+
+            <p>
+                Tìm việc nhanh chóng theo vị trí, địa điểm
+                và hình thức làm việc.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+
+    <div class="contact-box">
+
+        <div>
+            <span class="section-label">LIÊN HỆ</span>
+
+            <h2>Cần hỗ trợ?</h2>
+
+            <p>
+                Nếu bạn có câu hỏi hoặc cần hỗ trợ,
+                hãy liên hệ với Job4Student.
+            </p>
+        </div>
+
+
+        <div class="contact-info">
+
+            <div>
+                <span>📧</span>
+                <div>
+                    <small>Email</small>
+                    <strong>job4student@gmail.com</strong>
+                </div>
+            </div>
+
+            <div>
+                <span>📞</span>
+                <div>
+                    <small>Điện thoại</small>
+                    <strong>0123 456 789</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+            <div class="footer-logo">
+                <span>Job</span>4Student
+            </div>
+
+            <p>
+                Kết nối sinh viên với những cơ hội nghề nghiệp phù hợp.
+            </p>
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+                <h4>Khám phá</h4>
+                <a href="#home">Trang chủ</a>
+                <a href="#jobs">Tìm việc</a>
+                <a href="#about">Giới thiệu</a>
+            </div>
+
+            <div>
+                <h4>Liên hệ</h4>
+                <a href="#contact">Liên hệ</a>
+                <span>job4student@gmail.com</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        © 2026 Job4Student. Kết nối sinh viên với cơ hội nghề nghiệp.
+    </div>
+
+</footer>
+
+
+<!-- CHI TIẾT VIỆC LÀM -->
+<div id="jobDetailModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn"
+                onclick="closeJobDetail()">×</button>
+
+        <span id="detailType" class="modal-tag"></span>
+
+        <h2 id="detailTitle"></h2>
+
+        <p id="detailCompany"></p>
+        <p id="detailLocation"></p>
+        <p id="detailSalary"></p>
+
+        <hr>
+
+        <h3>Mô tả công việc</h3>
+        <p id="detailDescription"></p>
+
+        <button id="detailApplyButton"
+                class="submit-apply">
+            Ứng tuyển
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ĐĂNG NHẬP -->
+<div id="loginModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn"
+                onclick="closeLogin()">×</button>
+
+        <div class="modal-icon">👋</div>
+
+        <h2>Chào mừng trở lại!</h2>
+
+        <p class="apply-title">
+            Đăng nhập vào Job4Student
+        </p>
+
+        <label>Email</label>
+
+        <input id="loginEmail"
+               type="email"
+               placeholder="Nhập email">
+
+
+        <label>Mật khẩu</label>
+
+        <input id="loginPassword"
+               type="password"
+               placeholder="Nhập mật khẩu">
+
+
+        <button class="submit-apply"
+                onclick="loginUser()">
+            Đăng nhập
+        </button>
+
+
+        <p class="register-text">
+            Chưa có tài khoản?
+            <a href="#" onclick="openRegister()">
+                Đăng ký ngay
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ĐĂNG KÝ -->
+<div id="registerModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn"
+                onclick="closeRegister()">×</button>
+
+        <div class="modal-icon">✨</div>
+
+        <h2>Tạo tài khoản</h2>
+
+        <p class="apply-title">
+            Tham gia Job4Student ngay hôm nay
+        </p>
+
+
+        <label>Họ và tên</label>
+
+        <input id="registerName"
+               type="text"
+               placeholder="Nhập họ tên">
+
+
+        <label>Email</label>
+
+        <input id="registerEmail"
+               type="email"
+               placeholder="Nhập email">
+
+
+        <label>Mật khẩu</label>
+
+        <input id="registerPassword"
+               type="password"
+               placeholder="Tạo mật khẩu">
+
+
+        <button class="submit-apply"
+                onclick="registerUser()">
+            Đăng ký
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ỨNG TUYỂN -->
+<div id="applyModal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close-btn"
+                onclick="closeApply()">×</button>
+
+        <div class="modal-icon">📩</div>
+
+        <h2>Ứng tuyển</h2>
+
+        <p id="applyJobTitle"
+           class="apply-title"></p>
+
+
+        <label>Họ và tên</label>
+
+        <input id="applyName"
+               type="text"
+               placeholder="Nhập họ tên">
+
+
+        <label>Email</label>
+
+        <input id="applyEmail"
+               type="email"
+               placeholder="Nhập email">
+
+
+        <label>Số điện thoại</label>
+
+        <input id="applyPhone"
+               type="tel"
+               placeholder="Nhập số điện thoại">
+
+
+        <label>Giới thiệu bản thân</label>
+
+        <textarea id="applyMessage"
+                  placeholder="Giới thiệu ngắn về bạn"></textarea>
+
+
+        <button class="submit-apply"
+                onclick="submitApplication()">
+            Gửi hồ sơ
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
